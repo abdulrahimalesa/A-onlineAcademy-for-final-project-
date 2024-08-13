@@ -1,0 +1,132 @@
+<%- include('partials/_header') %>
+	
+    <%- include('partials/_navigation') %>
+
+	<div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel" data-pause="hover" data-interval="false" >
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="carousel-item">
+				<div id="home" class="first-section" style="background-image:url('images/slider-01.jpg');">
+					<div class="dtab">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 text-right">
+	 								<div class="big-tagline">
+										<p class="lead">Online Academy Öğretmenleri Ve Öğrencileri Birleştiren Bir Platformdur. </p>
+											<a href="#" class="hover-btn-new"><span>Bize Ulaşın</span></a>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" class="hover-btn-new"><span>Devamını oku</span></a>
+									</div>
+								</div>
+							</div><!-- end row -->            
+						</div><!-- end container -->
+					</div>
+				</div><!-- end section -->
+			</div>
+				<div id="home" class="first-section" style="background-image:url('images/slider-03.jpg');">
+					<div class="dtab">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 text-center">
+									<div class="big-tagline">
+										<h2><strong>Online </strong> Academy</h2>
+										<p class="lead">Online Academy Öğretmenleri Ve Öğrencileri Birleştiren Bir Platformdur.  </p>
+											<a href="/contact" class="hover-btn-new"><span>Bize Ulaşın</span></a>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="/about" class="hover-btn-new"><span>Devamını oku</span></a>
+									</div>
+								</div>
+							</div><!-- end row -->            
+						</div><!-- end container -->
+					</div>
+				</div><!-- end section -->
+			</div>
+
+		</div>
+	</div>
+	
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <h3>Ana Sayfanın İçeriği</h3>
+                </div>
+            </div><!-- end title -->
+        
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+
+						<!-- <% if(courses[0])  { %>
+
+                        <h2> <%= courses[0].name %> </h2>
+                        <p> <%= courses[0].description %></p>
+                        <a href="/courses/<%= courses[0].slug %>" class="hover-btn-new orange"><span>DEVAMINI OKU</span></a>
+                    <% } %> -->
+					<h1>İçerik</h1>
+					<h3> Projemizde asıl amacımız öğrencileri ve öğretmenleri aynı platform üzerinde toplayıp , öğretmenlerin eğitim videolarını öğrencilere daha kolay aktarabilmesidir. Projemiz hem öğrenciler hem öğretmenler açısından bilgiye erişimi kolaylaştırmayı hedeflemektedir.</h3>
+					</div><!-- end messagebox -->
+                </div><!-- end col -->
+				
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img src="images/about_02.jpg" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+			</div>
+			<div class="row align-items-center">
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img src="images/about_03.jpg" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+				
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+						<!-- <% if(courses[1] ) {%>
+                        <h2> <%= courses[1].name %> </h2>
+                        <p> <%= courses[1].description %></p>
+
+                        <a href="/courses/<%= courses[1].slug %>" class="hover-btn-new orange"><span>DEVAMINI OKU</span></a>
+						<% } %> -->
+						<h1>Hedefler</h1>
+						<h3> Belirli bir süre içinde hedeflenen kullanıcı sayısına ulaşmak ve katılım oranlarını artırmak.
+							Platforma eklenen yeni ve yenilikçi özelliklerle kullanıcı deneyimini sürekli olarak zenginleştirmek.
+							İş dünyasına yönelik beceri geliştirmeye odaklanan kursları sunmak.</h3>
+					</div><!-- end messagebox -->
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+	<div class="section cl">
+		<div class="container">
+			<div class="row text-left stat-wrap">
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-study"></i></span>
+					<p class="stat_count"> <%= totalStudents %> </p>
+					<h3>Öğrenciler</h3>
+				</div><!-- end col -->
+
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-online"></i></span>
+					<p class="stat_count"> <%= totalCourses %> </p>
+					<h3>Kurslar</h3>
+				</div><!-- end col -->
+				
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-years"></i></span>
+					<p class="stat_count"> <%= totalTeacher %> </p>
+					<h3>Öğretmenler</h3>
+				</div><!-- end col -->
+			</div><!-- end row -->
+		</div><!-- end container -->
+	</div><!-- end section -->
+
+
+
+    <%- include('partials/_footer') %>

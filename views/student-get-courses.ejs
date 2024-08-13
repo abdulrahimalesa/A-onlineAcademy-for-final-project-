@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Kredi Turbo</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/css/courses_styles.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="shortcut icon" href="/images/online-academy2.png" type="image/x-icon">
+</head>
+<body>
+
+	<div class="main-content">
+
+            
+	<header>
+		<div class="header-content">
+			<label for="menu-toggle">
+				<span class="las la-bars"></span>
+			</label>
+		</div>
+	</header>
+	
+	
+	<main class="table">
+		
+
+	</div>
+
+	</div>
+
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+            <a href="/"><img id="baslik" src="/images/online-academy2.png" width="130px" height="36px"></a>
+        </div>
+        
+        <div class="side-content">
+            <div class="profile">
+                <div class="profile-img bg-img" style="background-image: url(/images/icon1.jpg)"></div>
+                <h4><%= user.name %></h4>
+                <small></small>
+            </div>
+
+            <div class="side-menu">
+                <ul>
+                    <li>
+                        <a href="/courses" class=" <%=  (page_name === 'student-courses'  ) && 'active' %> ">
+                            <span class="las la-id-card-alt"></span>
+                            <small>Kurslar</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/users/student-dashboard" class=" <%=  (page_name === 'student-dashboard' || page_name === 'student-get-courses' ) && 'active' %> ">
+                            <span class="las la-user-alt"></span>
+                            <small>Alınan Kurslar</small>
+                        </a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-envelope"></span>
+                            <small>İLETİŞİM</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-clipboard-list"></span>
+                            <small></small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-tasks"></span>
+                            <small></small>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+	
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="row"> 
+
+                <div class="col-lg-9 blog-post-single">
+                    <div class="blog-item">
+						<div class="image-blog">
+							<img src="<%= course.images %>" alt="" class="img-fluid">
+						</div>
+						<div class="post-content">
+
+							<% if(user && (user.courses.includes(course._id))) { %>
+                                <br>
+								<div class="post-date">
+									
+										
+										<a href="/courses/video/<%= course.slug %>"><button class="btn btn-lg btn-warning text-white"> <span>kursu İzlemeye Başla</span> </button></a>
+                                        
+									<br><br>
+                                        
+                                            <form method="POST" action="/courses/release">
+                                                <input type="hidden" name="course_id" value="<%=course._id %>">
+                                                <button class="btn btn-lg btn-danger text-white" style="float: right;" onclick="return confirm('Bu kursu silmek istediğinizden emin misiniz?')"><span>Bu kursu sil</span></button>
+												<input type="hidden" name="onayladi">
+                                            </form>
+                                         
+								</div>
+								<br><br>
+								<div class="meta-info-blog">
+									<span><i class="fa fa-calendar"></i> <a href="#">Bu kursu Almişsın</a> </span>
+								</div>
+							<% } %>
+
+							
+							<div class="blog-title">
+								<h2><a href="" title=""> <%= course.name  %> </a></h2>
+							</div>
+							<div class="blog-desc">
+						
+								<blockquote class="default">
+									<%= course.description  %>
+								</blockquote>
+							</div>							
+						</div>
+					</div>
+					
+					<div class="blog-author">
+						<div class="author-bio">
+							<h3 class="author_name"><a href="#"> <%= course.user.name %> </a></h3>
+						</div>
+					</div>
+					
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->

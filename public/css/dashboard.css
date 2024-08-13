@@ -1,0 +1,1832 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --main-color: #9dd1f1;
+    --color-dark: #34425A;
+    --text-grey: #B0B0B0;
+    --bule: #094c75;
+    --darkblue: #192a56;
+    --gray: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'Merriweather', sans-serif;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+
+
+
+
+.button-container {
+    margin-bottom: 40px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container a {
+    display: flex;
+    text-align: center; /* İçeriği yatayda ortalar */
+    align-items: center;
+    flex-direction: column; /* İçeriği dikeyde ortalar */
+    justify-content: center;
+    width: 280px;
+    height: 120px;
+    background-color: #93bfe3;
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container a:hover {
+    background-color: #3493b6;
+    outline: none;
+    text-decoration: none; /* Altı çizgiyi ve maviyi kaldırmak için */
+    color: #000000;
+}
+
+.button-container a:focus,
+.button-container a:active {
+    outline: none;
+    text-decoration: none; /* Altı çizgiyi ve maviyi kaldırmak için */
+    color: #000000; /* Link rengini değiştirmek için */
+}
+
+.blur-button {
+    filter: blur(2.1px); /* Burada 4px yerine istediğiniz blur miktarını ayarlayabilirsiniz */
+  }
+
+
+  #baslik[src='images2/kredi-turbo-favicon2.png'] {
+    /* Özel stil ayarları */
+    width: 49px; /* Genişlik */
+    height: 40px; /* Yükseklik */
+}
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.overlay .modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 75%;
+    max-height: 80%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay .modal  {
+    width: 90%;
+    height: 100%;
+}
+
+/* Formun içeriklerini düzenlemek için gerekli stil */
+.overlay .modal form {
+    width: 100%;
+}
+
+.overlay .modal h2{
+    font-size: 220%;
+    font-weight: bold;
+    margin-top: 25%;
+}
+
+.close-button {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 53px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff0000;
+    outline: none;
+    padding: 0;
+}
+
+.close-button:hover {
+    color: rgb(180, 11, 11); /* Kapatma düğmesi üzerine gelindiğinde rengini değiştirebilirsiniz */
+}
+
+
+
+
+
+
+
+
+/* service section */
+
+
+
+
+
+.service_section {
+    position: relative;
+    margin-top: 30px;
+  }
+
+  .service_section h2 {
+    color: #094c75;
+    font-size: 50px;
+  }
+  
+  .service_section .box {
+    margin-top: 30px;
+    text-align: center;
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+    padding: 25px 15px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .service_section .box .img-box {
+    width: 90px;
+    height: 120px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .service_section .box .img-box img {
+    /* max-height: 100%;
+    max-width: 100%; */
+
+    width: 250px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  
+  .service_section .box .detail-box {
+    margin-top: 15px;
+  }
+  
+  .service_section .box .detail-box h5 {
+    font-weight: bold;
+  }
+  
+  .service_section .box .detail-box p {
+    margin: 0;
+    
+  }
+  
+  .service_section .box:hover {
+    background-color: #094c75;
+    color: #ffffff;
+    
+  }
+  
+  .service_section .box:hover .img-box img {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+  
+  .service_section .btn-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 45px;
+    
+  }
+  
+  .service_section .btn-box a {
+    display: inline-block;
+    padding: 10px 45px;
+    background-color: #094c75;
+    color: #ffffff;
+    border-radius: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border: 1px solid #094c75;
+    
+  }
+  
+  .service_section .btn-box a:hover {
+    background-color: transparent;
+    color: #094c75;
+    
+    
+  }
+
+
+  .box-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+  
+
+  
+  
+  .no-wrap {
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .btn-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-box a.btn {
+    padding: 10px 20px;
+    background-color: var(--red);
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid var(--red);
+    font-weight: bold; /* Kalın metin stilini ekledik */
+}
+
+.btn-box a.btn:hover {
+    background-color: transparent;
+    color: var(--red);
+    border: 1px solid var(--red); /* Hover'da sınır rengini değiştirdik */
+    text-decoration: none; /* Alt çizgiyi kaldırdık */
+}
+
+
+#all-banks:hover {
+    
+    outline: none;
+    text-decoration: none; /* Altı çizgiyi ve maviyi kaldırmak için */
+    color: #ffffff;
+}
+
+#all-banks:focus,
+#all-banks:active {
+    outline: none;
+    text-decoration: none; /* Altı çizgiyi ve maviyi kaldırmak için */
+    color: #000000; /* Link rengini değiştirmek için */
+}
+
+
+  /* service section */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 165px;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100;
+    background: var(--color-dark);
+    transition: left 300ms;
+}
+
+.side-header {
+    box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-header h3, side-head span {
+    color: #fff;
+    font-weight: 400;
+}
+
+.side-content {
+    height: calc(100vh - 60px);
+    overflow: auto;
+}
+
+/* width */
+.side-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.side-content::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.side-content::-webkit-scrollbar-thumb {
+  background: #b0b0b0; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.side-content::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+.profile {
+    text-align: center;
+    padding: 2rem 0rem;
+}
+
+.bg-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.profile-img {
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    margin: 0 auto .5rem auto;
+    border: 3px solid #899DC1;
+}
+
+.profile h4 {
+    color: #fff;
+    font-weight: 500;
+}
+
+.profile small {
+    color: #899DC1;
+    font-weight: 600;
+}
+
+
+
+.side-menu ul {
+    text-align: center;
+}
+
+.side-menu a {
+    display: block;
+    padding: 1.2rem 0rem;
+}
+
+.side-menu a.active {
+    background: #2B384E;
+}
+
+.side-menu a.active span, .side-menu a.active small {
+    color: #fff;
+}
+
+.side-menu a span {
+    display: block;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.side-menu a span, .side-menu a small {
+    color: #899DC1;
+}
+
+#menu-toggle:checked ~ .sidebar {
+    width: 60px;
+}
+
+#menu-toggle:checked ~ .sidebar .side-header span {
+    display: none;
+}
+
+#menu-toggle:checked ~ .main-content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+}
+
+#menu-toggle:checked ~ .main-content header {
+    left: 60px;
+}
+
+#menu-toggle:checked ~ .sidebar .profile,
+#menu-toggle:checked ~ .sidebar .side-menu a small {
+    display: none;
+}
+
+#menu-toggle:checked ~ .sidebar .side-menu a span {
+    font-size: 1.3rem;
+}
+
+
+.main-content {
+    margin-left: 165px;
+    width: calc(100% - 165px);
+    transition: margin-left 300ms;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 165px;
+    z-index: 100;
+    height: 60px;
+    box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
+    background: #fff;
+    transition: left 300ms;
+}
+
+.header-content, .header-menu {
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    margin-top: 16px;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+}
+
+.header-content label:first-child span {
+    font-size: 1.3rem;
+}
+
+.header-content label {
+    cursor: pointer;
+}
+
+.header-menu {
+    justify-content: flex-end;
+    padding-top: .5rem;
+}
+
+.header-menu label,
+.header-menu .notify-icon {
+    margin-right: 2rem;
+    position: relative;
+}
+
+.header-menu label span,
+.notify-icon span:first-child {
+    font-size: 1.3rem;
+}
+
+.notify-icon span:last-child {
+    position: absolute;
+    background: var(--main-color);
+    height: 16px;
+    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    right: -5px;
+    top: -5px;
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user div, .client-img {
+    height: 40px;
+    width: 40px;
+    margin-right: 1rem;
+}
+
+.user span:last-child {
+    display: inline-block;
+    margin-left: .3rem;
+    font-size: .8rem;
+}
+
+main {
+    margin-top: 60px;
+}
+
+.page-header {
+    padding: 1.3rem 1rem;
+    background: #E9edf2;
+    border-bottom: 1px solid #dee2e8;
+    height: 90px;
+}
+
+.page-header h1, .page-header small {
+    color: #74767d;
+    
+}
+
+.page-header h1 {
+    float: left; /* H1 başlığını sola kaydırır */
+    
+}
+
+    a.btn {
+    float: right; /* A elementini sağa kaydırır */
+    
+}
+
+
+.page-content {
+    padding: 1.3rem 1rem;
+    background: #f1f4f9;
+}
+
+.analytics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    box-shadow: 0px 5px 5px -5px rgb(0 0 0 / 10%);
+    background: #fff;
+    padding: 1rem;
+    border-radius: 3px;
+}
+
+.card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-head h2 {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.card-head span {
+    font-size: 3.2rem;
+    color: var(--text-grey);
+}
+
+.card-progress small {
+    color: #777;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.card-indicator {
+    margin: .7rem 0rem;
+    height: 10px;
+    border-radius: 4px;
+    background: #e9edf2;
+    overflow: hidden;
+}
+
+.indicator {
+    height: 10px;
+    border-radius: 4px;
+}
+
+.indicator.one {
+    background: #22baa0;
+}
+
+.indicator.two {
+    background: #11a8c3;
+}
+
+.indicator.three {
+    background: #f6d433;
+}
+
+.indicator.four {
+    background: #f25656;
+}
+
+.records {
+    box-shadow: 0px 5px 5px -5px rgb(0 0 0 / 10%);
+    background: #fff;
+    border-radius: 3px;
+}
+
+.record-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add, .browse {
+    display: flex;
+    align-items: center;
+}
+
+.add span {
+    display: inline-block;
+    margin-right: .6rem;
+    font-size: .9rem;
+    color: #666;
+}
+
+input, button, select {
+    outline: none;
+}
+
+.add select, .browse input, .browse select {
+    height: 35px;
+    border: 1px solid #b0b0b0;
+    border-radius: 3px;
+    display: inline-block;
+    width: 75px;
+    padding: 0rem .5rem;
+    margin-right: .8rem;
+    color: #666;
+}
+
+.add button {
+    background: var(--main-color);
+    color: #fff;
+    height: 37px;
+    border-radius: 4px;
+    padding: 0rem 1rem;
+    border: none;
+    font-weight: 600;
+}
+
+.browse input {
+    width: 150px;
+}
+
+.browse select {
+    width: 100px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow: auto;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table thead tr {
+    background: #e9edf2;
+}
+
+table thead th {
+    padding: 1rem 0rem;
+    text-align: left;
+    color: #444;
+    font-size: .9rem;
+}
+
+table thead th:first-child {
+    padding-left: 1rem;
+}
+
+table tbody td {
+    padding: 1rem 0rem;
+    color: #444;
+}
+
+table tbody td:first-child {
+    padding-left: 1rem;
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dee2e8;
+}
+
+.client {
+    display: flex;
+    align-items: center;
+}
+
+.client-img {
+    margin-right: .5rem;
+    border: 2px solid #b0b0b0;
+    height: 45px;
+    width: 45px;
+}
+
+.client-info h4 {
+    color: #555;
+    font-size: .95rem;
+}
+
+.client-info small {
+    color: #777;
+}
+
+.actions span {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-right: .5rem;
+}
+
+.paid {
+    display: inline-block;
+    text-align: center;
+    font-weight: 600;
+    color: var(--main-color);
+    background: #e5f8ed;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    font-size: .8rem;
+}
+
+
+
+/*  calculate*/
+
+.calculate {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 auto; /* Sayfayı yatayda ortala */
+    max-width: 800px; /* İsteğinize göre genişliği ayarlayın */
+    box-sizing: border-box;
+    margin-top: 139px;
+    
+}
+
+.calculate h1 {
+    font-size: 44px;
+    margin-bottom: 20px;
+}
+
+
+
+.calculate label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.calculate input[type="number"],
+.calculate select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.calculate .faiz-section {
+    display: flex;
+    align-items: center;
+    margin-right: 290px;
+}
+
+.calculate #faiz-yazısı {
+    flex: 1;
+}
+
+.calculate #faiz-orani-tam,
+.calculate #faiz-orani-kusurat {
+    width: 50px;
+}
+
+.calculate button {
+    background-color: var(--red);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 12px;
+}
+.calculate button:hover {
+    background-color: var(--darkblue);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+
+
+}
+
+.calculate .result {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+
+.calculate .result-label {
+    flex: 1;
+    font-weight: bold;
+}
+
+.calculate .result-value {
+    flex: 1;
+    text-align: right;
+}
+
+.calculate #sonuc {
+    font-size: 18px;
+    margin-top: 20px;
+    color: black;
+}
+#nokta{
+    font-size: 40px;
+    margin-bottom: 34px;
+}
+
+#faiz-orani-kusurat{
+    margin-right: 210px;
+    width: 230px;
+    
+}
+
+#faiz-orani-tam,
+#faiz-orani-kusurat {
+    width: 100px; /* İstediğiniz genişliği ayarlayın */
+    padding: 10px; /* İstediğiniz padding'i ayarlayın */
+}
+
+
+
+
+/*  calculate*/
+
+
+
+
+
+
+/*  AKTİF BANK MULTISTEP FORM */
+
+
+
+#heading {
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    margin: auto;
+    
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 130px
+
+}
+
+.aktif-bank-label-input{
+    flex: 1; min-width: 200px; height: 150px; margin-right: 30px;
+
+}
+
+
+
+
+.aktif-bank-custom-legend1{
+    position: relative; /* Göreli konumlandırma kullanır */
+    padding: 10px; /* İçerik ile çerçeve arasında boşluk ekler */
+    text-align: left; /* Yazıyı soldan başlatır */
+    color: var(--bule);
+    font-weight: bold; /* Kalın yazı tipi kullanır */
+    font-size: 25px;
+    margin-top: 100px;
+}
+.aktif-bank-custom-legend1::before {
+    content: "";
+    position: absolute; /* Mutlak konumlandırma kullanır */
+    bottom: -2px; /* Alt kenara 2 piksel mesafede yerleştirir */
+    left: 0; /* Solda başlatır */
+    float: left;
+    width: 100%; /* Tam genişlik */
+    border-bottom: 1px solid var(--darkblue); /* Alt kenara kesik çizgi ekler */
+}
+
+.aktif-bank-custom-legend {
+    position: relative; /* Göreli konumlandırma kullanır */
+    padding: 10px; /* İçerik ile çerçeve arasında boşluk ekler */
+    text-align: left; /* Yazıyı soldan başlatır */
+    color: var(--bule);
+    font-weight: bold; /* Kalın yazı tipi kullanır */
+    font-size: 25px;
+
+
+}
+
+.aktif-bank-custom-legend::before {
+    content: "";
+    position: absolute; /* Mutlak konumlandırma kullanır */
+    bottom: -2px; /* Alt kenara 2 piksel mesafede yerleştirir */
+    left: 0; /* Solda başlatır */
+    float: left;
+    width: 100%; /* Tam genişlik */
+    border-bottom: 1px solid var(--darkblue); /* Alt kenara kesik çizgi ekler */
+}
+
+
+
+label[for="kredi_turu"] {
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+    
+}
+
+select#kredi_turu {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Select alanının içindeki ok simgesini gizlemek isterseniz aşağıdaki stil özelliğini ekleyebilirsiniz */
+select#kredi_turu::-ms-expand {
+    display: none;
+}
+
+/* Select alanının üzerine gelindiğinde veya odaklandığında stil özelliklerini değiştirmek isterseniz aşağıdaki stil özelliklerini kullanabilirsiniz */
+select#kredi_turu:hover, select#kredi_turu:focus {
+    border-color: #555; /* Hover veya odaklandığında sınır rengini değiştirme */
+}
+
+
+
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    text-align: left
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input,
+#msform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+}
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid var(--bule);
+    outline-width: 0
+}
+
+#msform .action-button {
+    width: 100px;
+    background: var(--bule);
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: var(--darkblue)
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: var(--bule);
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
+}
+
+.purple-text {
+    color: var(--bule);
+    font-weight: normal
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left
+}
+
+#progressbar {
+    margin-left: 19%;
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: var(--bule);
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f0ae"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f030"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: var(--bule);
+}
+
+.progress {
+    height: 20px;
+    margin-left: 19%;
+    margin-right: 20%;
+}
+
+.progress-bar {
+    background-color: var(--bule);
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+
+.aktif-bank-input-container .aktif-bank-label-input {
+    display: inline-block;
+    width: 45%; /* İstediğiniz genişliği ayarlayın */
+    margin-right: 10px; /* İçerikler arasında boşluk ekleyebilirsiniz */
+
+}
+
+
+
+
+
+/* Checkbox etiketlerini tasarla */
+
+  
+label {
+    font-size: 18px; /* Etiket metin boyutunu artırır */
+    color: var(--your-color); /* Metin rengini değiştirmek için var(--your-color) yerine istediğiniz bir renk kodu kullanabilirsiniz */
+    font-weight: bold; /* Kalın yazı tipi kullanır */
+    margin-bottom: 10px; /* Etiket ile aşağıdaki girdi alanı arasındaki boşluğu artırır */
+    display: block; /* Etiketleri bir alt satıra yerleştirir */
+    /* Diğer stil özelliklerini ekleyebilirsiniz */
+}
+
+
+.aktif-bank-aciklama{
+    margin-left: 45px; 
+     }
+
+  /* Temel checkbox stilleri */
+.aktif-bank-checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 30px; /* Checkbox'dan önceki metin ile checkbox arasındaki boşluk */
+    margin-bottom: 12px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 15px;
+  }
+
+  
+  .aktif-bank-checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Checkmark (işaret) stilleri */
+  .aktif-bank-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+  }
+  
+  /* Checkbox işaretlendiğinde stil değişiklikleri */
+  .aktif-bank-checkbox-container input:checked ~ .aktif-bank-checkmark {
+    background-color: #2196F3; /* İsteğe bağlı olarak seçili olduğunda arka plan rengini değiştirin */
+  }
+  
+  /* İşaret sembolü (örneğin, tik işareti) */
+  .aktif-bank-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Checkbox işaretlendiğinde işaret sembolünü gösterme */
+  .aktif-bank-checkbox-container input:checked ~ .aktif-bank-checkmark:after {
+    display: block;
+  }
+  
+  /* İşaret sembolü stilini tanımlayın (örneğin, tik işareti) */
+  .aktif-bank-checkbox-container .aktif-bank-checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+
+  .resim-stili {
+    margin: auto;
+    max-width: 20%; /* Resmin en fazla genişlik ayarı */
+    height: auto; /* Resmin orijinal en-boy oranını korur */
+    margin-top: 20px;
+}
+
+.sayfanin-baslik {
+    position: fixed; /* Öğeyi sabitler */
+    background-color: rgb(255, 255, 255); /* Arka plan rengi */
+    margin-top: -50px; /* Üst boşluk ayarı (istenilen miktar) */
+    width: 60%; /* Genişlik ayarı, sayfanın tamamını kaplaması için */
+    z-index: 1000; /* Eğer sayfa içeriği ile çakışma sorunu varsa bu katmanı ayarlayabilirsiniz */
+    text-align: center; /* İçeriği yatayda ortala */
+    height: 130px;
+}
+
+
+
+
+
+/*  AKTİF BANK MULTISTEP FORM */
+
+
+
+
+
+
+
+/*  TURKIYE FINANS MULTISTEP FORM */
+
+label[for="combobox-turkiye-finans"] {
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+    
+}
+
+select#combobox-turkiye-finans {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Select alanının içindeki ok simgesini gizlemek isterseniz aşağıdaki stil özelliğini ekleyebilirsiniz */
+select#combobox-turkiye-finans::-ms-expand {
+    display: none;
+}
+
+/* Select alanının üzerine gelindiğinde veya odaklandığında stil özelliklerini değiştirmek isterseniz aşağıdaki stil özelliklerini kullanabilirsiniz */
+select#combobox-turkiye-finans:hover, select#combobox-turkiye-finans:focus {
+    border-color: #555; /* Hover veya odaklandığında sınır rengini değiştirme */
+}
+
+
+
+.turkiye-finans-checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 30px; /* Checkbox'dan önceki metin ile checkbox arasındaki boşluk */
+    margin-bottom: 12px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 15px;
+  }
+
+  
+  .turkiye-finans-checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Checkmark (işaret) stilleri */
+  .turkiye-finans-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+  }
+  
+  /* Checkbox işaretlendiğinde stil değişiklikleri */
+  .turkiye-finans-checkbox-container input:checked ~ .turkiye-finans-checkmark {
+    background-color: #2196F3; /* İsteğe bağlı olarak seçili olduğunda arka plan rengini değiştirin */
+  }
+  
+  /* İşaret sembolü (örneğin, tik işareti) */
+  .turkiye-finans-:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Checkbox işaretlendiğinde işaret sembolünü gösterme */
+  .turkiye-finans-checkbox-container input:checked ~ .turkiye-finans-checkmark:after {
+    display: block;
+  }
+  
+  
+  /* İşaret sembolü stilini tanımlayın (örneğin, tik işareti) */
+  .turkiye-finans-checkbox-container .turkiye-finans-checkmark:after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.result-box-turkiye-finans {
+    background-color: #e8f6fa;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid #00bfff; /* Kırmızı çerçeve rengi (örnek olarak) */
+}
+
+.result-box-turkiye-finans p {
+    margin: 5px 0;
+    flex: 0 1 calc(40% - 10px); /* %40 genişlik (sağ ve sol boşluğu çıkarmak için) */
+    font-size: 20px;
+}
+
+.result-box-turkiye-finans span {
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+/*  TURKIYE FINANS MULTISTEP FORM */
+
+
+
+
+
+
+
+
+
+@media (max-width:1150px){
+    
+    .button-container a {
+        width: 210px;
+        height: 90px;
+        font-size: 20px;
+        margin: 5px;
+        
+    }
+
+}
+
+@media (max-width:767px){
+
+    .button-container a {
+        width: 170px;
+        height: 70px;
+        font-size: 17px;
+        margin: 5px;
+        
+    }
+
+    .blur-button {
+        filter: blur(1.7px); /* Burada 4px yerine istediğiniz blur miktarını ayarlayabilirsiniz */
+      }
+}
+
+@media (max-width:450px){
+
+    .button-container a {
+        width: 150px;
+        height: 66px;
+        font-size: 11px;
+        margin: 2px;
+        
+    }
+    
+
+    .btn-lg #logout-bayi {
+        font-size: 18px; /* Yazı boyutunu küçültmek için */
+    }
+
+    .btn.btn-lg {
+        font-size: 16px; /* Düğemnin boyutunu küçültmek için */
+        padding: 5px 10px; /* Düğme içeriğinin etrafındaki boşluğu ayarlamak için */
+    }
+
+    .page-header h1{
+        font-size: 30px;
+    }
+
+    .blur-button {
+        filter: blur(1.1px); /* Burada 4px yerine istediğiniz blur miktarını ayarlayabilirsiniz */
+      }
+}
+
+@media (max-width:350px){
+
+    .button-container a {
+        width: 130px;
+        height: 56px;
+        font-size: 11px;
+        margin: 2px;
+        
+    }
+
+    .btn-lg #logout-bayi {
+        font-size: 14px; /* Yazı boyutunu küçültmek için */
+    }
+
+    .btn.btn-lg {
+        font-size: 14px; /* Düğemnin boyutunu küçültmek için */
+        padding: 4px 8px; /* Düğme içeriğinin etrafındaki boşluğu ayarlamak için */
+    }
+
+    .page-header h1{
+        font-size: 27px;
+    }
+}
+
+
+
+
+/*  MULTISTEP FORM */
+
+
+
+
+@media only screen and (max-width: 1200px) {
+    .analytics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* SERVİCE SECTİON */
+    .service_section {
+         margin-top: 5px; /* İçerik için biraz daha az üst boşluk */
+      }
+
+    .service_section .box {
+        padding: 15px;
+        
+      }
+      .service_section .box .img-box img {
+        width: 180px; /* Resim boyutunu küçültün */
+      }
+
+    
+    /* SERVİCE SECTİON */
+
+
+
+}
+
+@media (max-width:993px){
+
+    .service_section .box {
+        margin-top: 30px;
+        padding: 15px 5px;
+
+      }
+
+      .service_section .box .img-box img {
+        /* max-height: 100%;
+        max-width: 100%; */
+        width: 180px;
+
+      }
+
+      .no-wrap {
+        font-size: 18px;
+      }
+      
+
+
+
+}
+
+@media only screen and (max-width: 768px) {
+    /* SERVİCE SECTİON */
+
+
+.service_section{
+    margin-left: 0%;
+    
+}
+
+.service_section .box{
+    width: 100%;
+    /* height: 60%; */
+    height: auto;
+    
+}
+
+.service_section .box .img-box img {
+    width: 150px; /* Resim boyutunu küçültün */
+  }
+
+  .service_section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service_section .col-sm-6 {
+    flex-basis: calc(50% - 20px);
+    max-width: calc(50% - 20px);
+
+
+}
+
+.overlay .modal h2{
+    margin-top: 70%;
+    font-size: 20px;
+}
+
+
+
+/* SERVİCE SECTİON */
+    .analytics {
+        grid-template-columns: 100%;
+    }
+    
+    .sidebar {
+        left: -165px;
+        z-index: 90;
+    }
+    
+    header {
+        left: 0;
+        width: 100%;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    #menu-toggle:checked ~ .sidebar {
+        left: 0;
+    }
+    
+    #menu-toggle:checked ~ .sidebar {
+        width: 165px;
+    }
+
+    #menu-toggle:checked ~ .sidebar .side-header span {
+        display: inline-block;
+    }
+
+    #menu-toggle:checked ~ .sidebar .profile,
+    #menu-toggle:checked ~ .sidebar .side-menu a small {
+        display: block;
+    }
+
+    #menu-toggle:checked ~ .sidebar .side-menu a span {
+        font-size: 1.7rem;
+    }
+    
+    #menu-toggle:checked ~ .main-content header {
+        left: 0px;
+    }
+    
+    table {
+        width: 900px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+
+    /* SERVİCE SECTİON */
+    .no-wrap {
+       font-size: 15px;
+     }
+
+    .service_section{
+
+       margin-left: 0%;
+   }
+
+   .service_section .box{
+       width: auto;
+       height: 120px;
+   }
+
+   .service_section .box .img-box img {
+       width: 120px; /* Resim boyutunu küçültün */
+       height: 40px;
+     }
+
+     #satis-garanti-logo{
+        min-width: 150px;
+        min-height: 70px;
+    }
+
+    #yapi-kredi-logo{
+        width: 120px; /* Resim boyutunu küçültün */
+        height: 20px;
+    }
+   
+
+
+
+   /* SERVİCE SECTİON */
+
+
+ 
+}
+
+@media only screen and (max-width: 450px) {
+
+    /* SERVİCE SECTİON */
+    .no-wrap {
+        font-size: 10px;
+      }
+    
+        .overlay .modal a{
+            font-size: 11px;
+          }
+          .service_section .box .img-box img {
+            width: 85px; /* Resim boyutunu küçültün */
+            height: 27px;
+          }
+          .overlay .modal h2{
+            font-size: 15px;
+    
+        }
+
+        #satis-garanti-logo{
+            min-width: 100px;
+            min-height: 50px;
+        }
+        #yapi-kredi-logo{
+            width: 85px; /* Resim boyutunu küçültün */
+            height: 20px;
+        }
+              
+    
+    /* SERVİCE SECTİON */
+    
+    }
+    
+    @media only screen and (max-width: 350px) {
+    
+    /* SERVİCE SECTİON */
+    
+    .no-wrap {
+        font-size: 7px;
+      }
+    
+    .service_section .box .img-box img {
+        width: 70px; /* Resim boyutunu küçültün */
+        height: 20px;
+      }
+      .service_section .box  {
+        height: 70px;
+      }
+    
+    
+    
+    
+    /* SERVİCE SECTİON */
+    }

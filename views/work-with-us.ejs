@@ -1,0 +1,77 @@
+<%- include('partials/_header') %>
+	
+    <%- include('partials/_navigation') %>
+<style>
+    label {
+    color: white;
+    float: left;
+    font-size: 18px;
+    display: block; /* Etiketleri blok element olarak göster */
+    margin-bottom: 5px; /* Alt kısımlar arası boşluk */
+}
+</style>
+	        <div class="container">
+            <div class="section-title text-center">
+                <h3 class="mt-5">BIZIMLE ÇALIŞIN</h3>
+
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12">
+                    <div class="contact_form">
+                        <div id="message"></div>
+                        <form method="POST" action="users/teacher-register">
+                            <div class="row row-fluid">
+							    <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                <% if(flashMessages) { %>
+                                    <% if (flashMessages.success) { %>
+                                        <div class="alert alert-success">
+                                            <%= flashMessages.success %>
+                                        </div>
+                                         <%  } else if (flashMessages.error) {  %>
+            
+                                            <div class="alert alert-danger">
+                                                <%= flashMessages.error %>
+                                            </div>
+                                            <% }  %>
+                                     <% }  %>
+                                    </div>
+
+							    <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                    <label for="name">Adınız Soyadınız:</label><br>
+                                    <input type="text" id="name" name="name" placeholder="Ad Soyad" class="form-control"><br><br>
+                               </div>
+
+                               <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                <label for="email">E-posta Adresiniz:</label><br>
+                                <input type="email" id="email" name="email" placeholder="E-posta" class="form-control"><br><br>
+                                </div>
+
+                                <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                    <label for="subject">Öğretebileceğiniz Konu veya Ders:</label><br>
+                                    <input type="text" id="subject" name="subject" placeholder="Öğretebileceğiniz Konu veya Ders" class="form-control"><br><br>
+                                </div>
+
+                                <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                    <label for="experience">Deneyim veya Tecrübe (isteğe bağlı):</label><br>
+                                    <textarea id="experience" name="experience" placeholder="Deneyim veya Tecrübe (isteğe bağlı)" rows="4" cols="50" class="form-control"></textarea><br><br>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                              
+                                
+                                <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                    <button type="submit" value="LOGIN" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Basvuruyu Gonder</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+	 </div><!-- end container -->
+	
+
+       <%- include('partials/_footer') %>

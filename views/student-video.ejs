@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Kredi Turbo</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/css/courses_styles.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="shortcut icon" href="/images/online-academy2.png" type="image/x-icon">
+</head>
+<style>
+   
+
+    .video-player {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    .video-list {
+        flex: 0 0 30%;
+        max-width: 30%;
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .video-list-item {
+        margin-bottom: 8px;
+    }
+    video {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .selected-video {
+    font-weight: bold !important;
+    color: #eea412 !important;
+    padding: 4px !important; /* Opsiyonel: daha belirgin olması için içeriğin etrafına biraz boşluk bırakabilirsiniz */
+    border-radius: 3px !important; /* Opsiyonel: köşeleri yuvarlamak için */
+    font-size: 20px !important;
+}
+</style>
+<body>
+
+	<div class="main-content">
+
+            
+	<header>
+		<div class="header-content">
+			<label for="menu-toggle">
+				<span class="las la-bars"></span>
+			</label>
+		</div>
+	</header>
+	
+	
+	<main class="table">
+		
+
+	</div>
+
+	</div>
+
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+            <a href="/"><img id="baslik" src="/images/online-academy2.png" width="130px" height="36px"></a>
+        </div>
+        
+        <div class="side-content">
+            <div class="profile">
+                <div class="profile-img bg-img" style="background-image: url(/images/icon1.jpg)"></div>
+                <h4><%= user.name %></h4>
+                <small></small>
+            </div>
+
+            <div class="side-menu">
+                <ul>
+                    <li>
+                        <a href="/courses" class=" <%=  (page_name === 'student-courses'  ) && 'active' %> ">
+                            <span class="las la-id-card-alt"></span>
+                            <small>Kurslar</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/users/student-dashboard" class=" <%=  (page_name === 'student-dashboard' || page_name === 'student-get-courses' || page_name === 'student-video') && 'active' %> ">
+                            <span class="las la-user-alt"></span>
+                            <small>Alınan Kurslar</small>
+                        </a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-envelope"></span>
+                            <small>İLETİŞİM</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-clipboard-list"></span>
+                            <small></small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-tasks"></span>
+                            <small></small>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+	
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="row"> 
+
+                <div class="col-lg-9 blog-post-single">
+                    <div class="blog-item">
+						<div class="image-blog">
+                            <video id="main-video" controls>
+                                <source src="<%= course.videos[0] %>" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                           
+						<div class="post-content">
+
+							<% if(user && (user.courses.includes(course._id))) { %>
+
+								
+								<div class="meta-info-blog">
+									<span><i class="fa fa-calendar"></i> <a href="#">Bu kursu Almişsın</a> </span>
+								</div>
+							<% } %>
+
+							
+							<div class="blog-title">
+								<h2><a href="" title=""> <%= course.name  %> </a></h2>
+							</div>
+							<div class="blog-desc">
+						
+								<blockquote class="default">
+									<%= course.description  %>
+								</blockquote>
+							</div>							
+						</div>
+					</div>
+					
+					<div class="blog-author">
+						<div class="author-bio">
+							<h3 class="author_name"><a href="#"> <%= course.user.name %> </a></h3>
+						</div>
+					</div>
+					
+                </div><!-- end col -->
+				<div class="col-lg-3 col-12 right-single">
+					<div class="widget-search">
+						<div class="site-search-area">
+							<form method="GET" id="site-searchform" action="/courses">
+								<div>
+									<input class="input-text form-control" name="search" id="search" placeholder="Search keywords..." type="text">
+									<button id="searchsubmit" value="Search" type="submit"></button>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+                    <div class="widget-categories">
+                        <h3 class="widget-title">Diğer Videolar</h3>
+                        <ul id="video-list">
+                            <% for(var i = 0 ; i < course.videos.length; i++){ %>
+                                <% var video = course.videos[i]; %>
+                                <li class="video-list-item">
+                                    <a href="<%= video %>" class="<%= i === 0 ? 'selected-video' : '' %>"> <%= i + 1 +':'%> <%= course.videoTitles[i] %> </a>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </div>
+				</div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const videoLinks = document.querySelectorAll("#video-list a");
+            const mainVideo = document.getElementById("main-video");
+    
+            // İlk video bağlantısına "selected-video" sınıfını ekle
+            videoLinks[0].classList.add("selected-video");
+    
+            videoLinks.forEach(function(link) {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const videoSrc = this.getAttribute("href");
+                    mainVideo.src = videoSrc;
+                    mainVideo.load();
+                    mainVideo.play();
+    
+                    // Seçilen video bağlantısına "selected-video" sınıfını ekle
+                    videoLinks.forEach(function(link) {
+                        link.classList.remove("selected-video");
+                    });
+                    this.classList.add("selected-video");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

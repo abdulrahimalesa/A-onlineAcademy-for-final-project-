@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Kredi Turbo</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/css/courses_styles.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="shortcut icon" href="/images/online-academy2.png" type="image/x-icon">
+</head>
+
+
+
+<body>
+
+	<div class="main-content">
+
+            
+	<header>
+		<div class="header-content">
+			<label for="menu-toggle">
+				<span class="las la-bars"></span>
+			</label>
+		</div>
+	</header>
+	
+	
+	<main class="table">
+		
+
+	</div>
+
+	</div>
+
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="side-header">
+            <a href="/"><img id="baslik" src="/images/online-academy2.png" width="130px" height="36px"></a>
+        </div>
+        
+        <div class="side-content">
+            <div class="profile">
+                <div class="profile-img bg-img" style="background-image: url(/images/icon1.jpg)"></div>
+                <h4><%= user.name %></h4>
+                <small></small>
+            </div>
+
+            <div class="side-menu">
+                <ul>
+                    <li>
+                        <a href="/courses/teacher-dashboard" class="active ">
+                            <span class="las la-id-card-alt"></span>
+                            <small>Ana sayfa</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" >
+                            <span class="las la-user-alt"></span>
+                            <small> </small>
+                        </a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-envelope"></span>
+                            <small>İLETİŞİM</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-clipboard-list"></span>
+                            <small></small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="las la-tasks"></span>
+                            <small></small>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+	
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="row"> 
+
+                <div class="col-lg-9 blog-post-single">
+                    <div class="blog-item">
+						<div class="image-blog">
+							<img src="<%= course.images %>" alt="" class="img-fluid">
+						</div>
+						<div class="post-content">
+							
+							
+
+											<div class="course-item mb-5">
+												 
+												<div class="course-br">
+													 
+													 
+						
+													<div class="clearfix">
+														<ul style="list-style-type: none;">
+														<li style="float: left;"><button class="btn btn-primary rounded-0 text-white"
+															data-toggle="modal" data-target="#updateCourse<%= course._id%>"
+															><span>UPDATE</span></button></li>
+														<li style="float: right;"><a href="/courses/<%= course.slug %>?_method=DELETE"
+															onclick="return confirm('ARE YOU SURE')" class="btn btn-danger rounded-0 text-white"><span>DELETE</span></a></li>
+														</ul>
+													</div>
+						
+													
+												</div>
+												
+											</div>
+											<a style="float: right;" href="/courses/teacher-video/<%= course.slug %>"><button class="btn btn-lg btn-warning text-white"> <span> Eklenen Videoları İncele</span> </button></a>
+
+									
+										 
+						
+										
+										<!-- UpDate Modal -->
+							<div class="modal fade" id="updateCourse<%= course._id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+								<div class="modal-content">
+								<div class="modal-body customer-box">
+									<!-- Tab panes -->
+									<div class="tab-content">
+										<div class="tab-pane active" id="Login">
+											<form method="POST" action="/courses/<%= course.slug %>?_method=PUT" class="form-horizontal" enctype="multipart/form-data">
+												
+												<div class="form-group">
+													<label for="courseName" class="col-sm-3 control-label">Course Name:</label>
+													<div class="col-sm-12">
+														<input type="text" name="name" value="<%= course.name %>" class="form-control"  placeholder="Course Name">
+													</div>
+												</div>
+						
+												<div class="form-group">
+													<div class="col-sm-12">
+														<input type="hidden" name="role" class="form-control" value="<%= user.role %>">
+													</div>
+												</div>
+						
+												<div class="form-group">
+													<label for="courseDescription" class="col-sm-3 control-label">Kurs Tanımı:</label>
+													<div class="col-sm-12">
+														<input type="text" name="description" value="<%= course.description %>" class="form-control"  placeholder="Course Description">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label for="courseImages" class="col-sm-3 control-label">Course Images:</label>
+													<div class="col-sm-12">
+														<div class="custom-file">
+															<input type="file" name="images" value="<%= course.images %>"  class="custom-file-input" id="courseImages" multiple>
+															<label class="custom-file-label" for="courseImages">Choose Images</label>
+														</div>
+													</div>
+												</div>
+												
+												<div class="form-group">
+													<div class="col-sm-12">
+														<% if (Array.isArray(course.videos) && course.videos.length > 0) { %>
+															<% for (let i = 0; i < course.videos.length; i++) { %>
+																<div class="form-group">
+																	<label for="courseVideo<%= i %>" class="col-sm-3 control-label">Video <%= i + 1 %>:</label>
+																	<div class="col-sm-12">
+																		<input type="file" name="videos" class="custom-file-input" id="courseVideo<%= i %>" accept="video/*">
+																		<label class="custom-file-label" for="courseVideo<%= i %>">Choose Video</label>
+																	</div>
+																</div>
+															<% } %>
+														<% } %>
+													</div>
+												</div>
+												
+												  
+												  
+
+ 
+												<div class="form-group">
+													<div class="col-sm-12">
+													  <% if (Array.isArray(course.videoTitles) && course.videoTitles.length > 0) { %>
+														<% for (let i = 0; i < course.videoTitles.length; i++) { %>
+														  <input type="text" name="videoTitles" value="<%= course.videoTitles[i] %>" class="form-control" placeholder="Video Title <%= i + 1 %>">
+														<% } %>
+													  <% } else { %>
+														<input type="text" name="videoTitles" value="<%= course.videoTitles %>" class="form-control" placeholder="Course Description">
+													  <% } %>
+													</div>
+												  </div>
+												<div class="form-group">
+													<div class="col-sm-12">
+														<select class="form-control" name="category" >
+															<% for (let i=0; i< categories.length; i++) { %>
+															<option value="<%= categories[i]._id %>" >  <%= categories[i].name %> </option>
+						
+															<% } %>
+														</select>
+													</div>
+												</div>
+												
+												<div class="row">
+													<div class="col-sm-10">
+														<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
+															Submit
+														</button>
+														<button type="submit" class="btn btn-light btn-radius btn-brd grd1"
+															data-dismiss="modal" aria-hidden="true">
+															Cancel
+														</button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								</div>
+								</div>
+								</div>
+						
+						
+									 
+										
+		
+
+
+
+
+
+
+
+
+
+							
+								
+								<div class="meta-info-blog">
+									<span><i class="fa fa-calendar"></i> <a href="#">  <% if (course.createAt) { %>
+										<% const basvuruTarihi = new Date(course.createAt); %>
+										<a><%= basvuruTarihi.getDate() %>.<%= basvuruTarihi.getMonth() + 1 %>.<%= basvuruTarihi.getFullYear() %> </a>
+									  <% } else { %>
+										Boş
+									  <% } %>  </a> </span>
+								</div>
+							
+
+							
+							<div class="blog-title">
+								<h2><a href="" title=""> <%= course.name  %> </a></h2>
+							</div>
+							<div class="blog-desc">
+						
+								<blockquote class="default">
+									<%= course.description  %>
+								</blockquote>
+							</div>							
+						</div>
+					</div>
+					
+					<div class="blog-author">
+						<div class="author-bio">
+							<h3 class="author_name"><a href="#"> <%= course.user.name %> </a></h3>
+						</div>
+					</div>
+					
+                </div><!-- end col -->
+				<!-- <div class="col-lg-3 col-12 right-single">
+					<div class="widget-search">
+						<div class="site-search-area">
+							<form method="GET" id="site-searchform" action="/courses">
+								<div>
+									<input class="input-text form-control" name="search" id="search" placeholder="Search keywords..." type="text">
+									<button id="searchsubmit" value="Search" type="submit"></button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="widget-categories">
+						<h3 class="widget-title">Categories</h3>
+						<ul>
+							<% for (let i=0; i< categories.length; i++) { %>
+							<li><a href="/courses?categories=<%= categories[i].slug %>"> <%= categories[i].name  %> </a></li>
+							<% } %>	
+						</ul>
+					</div>
+				</div> -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+
+
+		<!-- ALL JS FILES -->
+		<script src="/js/all.js"></script>
+		<!-- ALL PLUGINS -->
+		<script src="/js/custom.js"></script>
