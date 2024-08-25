@@ -1,7 +1,8 @@
 # Online Academy
 ## Description
-I developed the website using Node.js and Express, with MongoDB as the database.
+An educational website designed to facilitate easier interaction between teachers and students. The platform enables smooth communication and collaboration, making it easier for both parties to connect and engage with each other.
 ## Tools and Packages Used
+I developed the website using Node.js and Express, with MongoDB as the database.
 - bcrypt: For securely storing user passwords.
 - connect-flash: To manage flash messages.
 - connect-mongo: To store session data in MongoDB.
